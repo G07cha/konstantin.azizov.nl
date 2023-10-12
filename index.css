@@ -22,7 +22,7 @@ body {
   width: 100dvw;
   user-select: none;
   /* Fixing occasional leaking background */
-  border: 1px solid var(--main-bg-color);
+	clip-path: polygon(0% 5px, 100% 5px, 100% 98%, 0 98%);
 }
 
 .icons-container {
