@@ -1,0 +1,19 @@
+html, body {
+	height: 100%;
+}
+
+/* TODO: Remove these styles once blog is live */
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	animation: looped-gradient 10s ease infinite;
+	background: var(--main-gradient);
+	background-size: 400% 400%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}

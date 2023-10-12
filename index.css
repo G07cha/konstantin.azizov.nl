@@ -1,0 +1,62 @@
+body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.gradient-animation {
+	animation: looped-gradient 10s ease infinite;
+	background: var(--main-gradient);
+}
+
+.initial-animation {
+  background: linear-gradient(to right, var(--main-bg-color) 20%, #21aeca, #21aeca);
+	animation: ltr-gradient 4s ease-in normal;
+}
+
+.background {
+	background-size: 400% 400%;
+  width: 100dvw;
+  user-select: none;
+  /* Fixing occasional leaking background */
+  border: 1px solid var(--main-bg-color);
+}
+
+.icons-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 1.8dvw;
+  margin-top: 11.5dvw;
+}
+
+.icons-container a {
+  text-decoration: none;
+  width: 7.4dvw;
+  height: 7.3dvw;
+}
+
+
+@keyframes ltr-gradient {
+	0% {
+		background-position-x: 0%;
+	}
+	100% {
+		background-position-x: 100%;
+	}
+}
+
+@keyframes looped-gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
