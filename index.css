@@ -23,6 +23,8 @@ body {
   user-select: none;
   /* Fixing occasional leaking background */
 	clip-path: polygon(0% 5px, 100% 5px, 100% 98%, 0 98%);
+	/* Follow up to the above fix specifically for Safari, see https://github.com/emilbjorklund/svg-weirdness/issues/27#issuecomment-257096538 */
+	transform: translateZ(0)
 }
 
 .icons-container {
