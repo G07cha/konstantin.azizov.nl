@@ -8,22 +8,27 @@ body {
 }
 
 .gradient-animation {
-	animation: looped-gradient 10s ease infinite;
-	background: var(--main-gradient);
+  animation: looped-gradient 10s ease infinite;
+  background: var(--main-gradient);
 }
 
 .initial-animation {
-  background: linear-gradient(to right, var(--main-bg-color) 20%, #21aeca, #21aeca);
-	animation: ltr-gradient 1s cubic-bezier(.6,.04,.98,.34) normal;
+  background: linear-gradient(
+    to right,
+    var(--main-bg-color) 20%,
+    #21aeca,
+    #21aeca
+  );
+  animation: ltr-gradient 1s cubic-bezier(0.6, 0.04, 0.98, 0.34) normal;
 }
 
 .background {
-	background-size: 400% 400%;
+  background-size: 400% 400%;
   width: 100dvw;
   /* Fixing occasional leaking background */
-	clip-path: polygon(0% 5px, 100% 5px, 100% 98%, 0 98%);
-	/* Follow up to the above fix specifically for Safari, see https://github.com/emilbjorklund/svg-weirdness/issues/27#issuecomment-257096538 */
-	transform: translateZ(0);
+  clip-path: polygon(0% 5px, 100% 5px, 100% 98%, 0 98%);
+  /* Follow up to the above fix specifically for Safari, see https://github.com/emilbjorklund/svg-weirdness/issues/27#issuecomment-257096538 */
+  transform: translateZ(0);
 }
 
 .icons-container {
@@ -38,32 +43,31 @@ body {
   text-decoration: none;
   width: 7.4dvw;
   height: 7.3dvw;
-	mix-blend-mode: soft-light;
-	transform: translateZ(0);
+  mix-blend-mode: soft-light;
+  transform: translateZ(0);
 }
 
 .icons-container a:hover {
-	background: var(--main-bg-color);
+  background: var(--main-bg-color);
 }
 
-
 @keyframes ltr-gradient {
-	0% {
-		background-position-x: 0%;
-	}
-	100% {
-		background-position-x: 100%;
-	}
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
 }
 
 @keyframes looped-gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
