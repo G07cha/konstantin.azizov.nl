@@ -14,7 +14,7 @@ body {
 
 .initial-animation {
   background: linear-gradient(to right, var(--main-bg-color) 20%, #21aeca, #21aeca);
-	animation: ltr-gradient 4s ease-in normal;
+	animation: ltr-gradient 1s cubic-bezier(.6,.04,.98,.34) normal;
 }
 
 .background {
