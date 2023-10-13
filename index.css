@@ -20,11 +20,10 @@ body {
 .background {
 	background-size: 400% 400%;
   width: 100dvw;
-  user-select: none;
   /* Fixing occasional leaking background */
 	clip-path: polygon(0% 5px, 100% 5px, 100% 98%, 0 98%);
 	/* Follow up to the above fix specifically for Safari, see https://github.com/emilbjorklund/svg-weirdness/issues/27#issuecomment-257096538 */
-	transform: translateZ(0)
+	transform: translateZ(0);
 }
 
 .icons-container {
@@ -39,6 +38,12 @@ body {
   text-decoration: none;
   width: 7.4dvw;
   height: 7.3dvw;
+	mix-blend-mode: soft-light;
+	transform: translateZ(0);
+}
+
+.icons-container a:hover {
+	background: var(--main-bg-color);
 }
 
 
