@@ -45,6 +45,8 @@ body {
   height: 7.3dvw;
   mix-blend-mode: soft-light;
   transform: translateZ(0);
+  border-radius: 50%;
+  transition: 0.5s background;
 }
 
 .icons-container a:hover {
