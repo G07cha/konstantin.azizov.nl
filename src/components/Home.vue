@@ -57,6 +57,7 @@ onUnmounted(() => {
   align-items: center;
   height: 100dvh;
   overflow: hidden;
+  background: #fff;
 }
 
 .gradient-animation {
