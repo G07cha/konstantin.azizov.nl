@@ -1,3 +1,8 @@
+---
+title: Lessons from AI-assisted migration
+date: 2026-03-22
+---
+
 # Lessons from AI-assisted migration
 
 I spent some time last weekend to migrate our monorepo (multiple apps and packages, almost 150k LOC) from ESLint and Prettier to [Biome](https://biomejs.dev/). This was my third attempt, largely driven by LLM efforts, thought I’d share what worked and what didn’t, short and sweet.
