@@ -1,6 +1,16 @@
 ---
 title: AI security audit for mere mortals
 date: 2026-10-25
+head:
+  - - meta
+    - property: og:image
+      content: https://konstantin.azizov.nl/blog/assets/ai-audits-for-mere-mortals-preview.jpg
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:image
+      content: https://konstantin.azizov.nl/blog/assets/ai-audits-for-mere-mortals-preview.jpg
 ---
 
 # AI security audit for mere mortals
