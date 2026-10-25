@@ -63,8 +63,24 @@ Last but not least, the [security audit skill](https://github.com/cloudflare/sec
 
 ## Verdict
 
-I ran them against a decently sized codebase. Side by side, the security audit skill from Cloudflare came up with the most verified findings, likely because it was doing multiple passes and attempting to verify all the findings in a sandbox. The Claude Code plugin contained quite a few duplicates but was a close second. Deepsec felt rather unwieldy and, despite the promising benchmarks, was about on the same level as the Claude Code plugin but contained many more general findings which can be classified as bugs rather than security issues.
+I ran all three against a decently sized codebase. Here's how the reports compared:
 
-All in all, there seem to be quite a few options available, likely even more if one ventures into black-box testing and makes use of models with fewer safety guardrails (DeepSeek or GLM, for example), but even with something that's already publicly available I was able to find a decent number of major issues that had accumulated in the codebase over the years.
+|                              | Cloudflare skill     | CC plugin | Deepsec               |
+| ---------------------------- | -------------------- | --------- | --------------------- |
+| Security findings reported   | 39                   | 81        | 282                   |
+| Distinct after deduplication | 39                   | ~46       | ~170–200              |
+| Critical / High              | 1 / 9                | 0 / 16    | 12\* / 74             |
+| Verified                     | Yes, in a sandbox    | No        | No                    |
+| Extra output                 | 29 leads to validate | –         | 191 non-security bugs |
 
-And remember, kids, the only way to stop a bad guy with an AI agent is a good guy with an AI agent /s.
+\* mostly overstated, closer to high in reality
+
+Based on the table above, it might seem like Deepsec is leading far ahead with almost 500 items and a dozen of them being critical. But as it turned out on a second look, most of them were either duplicates in one way or another or not security issues at all (still bugs though). The Claude plugin was somewhere between the two, with fewer overall findings but still around half of them being duplicates.
+
+The Cloudflare skill reported the fewest findings (39), but they came already deduplicated and verified in a sandbox. It still reported quite a lot of things that it couldn't verify, organized into a separate list. It leaned heavily toward minimizing false positives, which allowed for a more efficient manual review.
+
+**Only a dozen and a half issues showed up in all three reports, so try to run at least two tools. If you can only pick one, the Cloudflare skill gives you the least noise and the Claude Code plugin costs the fewest tokens with the most straightforward follow-up path.**
+
+But the real cost of an AI audit isn't the tokens, it's the triage. Even with the most conservative tool on a regular subscription, I ended up with one critical and nine high-severity issues that had built up in the codebase over the years. For me, that was well worth an afternoon of usage limits.
+
+And remember, kids, the only way to stop a bad guy with an AI agent is with a good guy with an AI agent /s.
