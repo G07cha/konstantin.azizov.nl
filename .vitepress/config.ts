@@ -33,12 +33,17 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
+    outline: [2, 3],
     sidebar: [
       {
         items: [
           {
             text: "Lessons from AI-assisted migration",
             link: "/blog/biome-migration",
+          },
+          {
+            text: "AI audits for mere mortals",
+            link: "/blog/ai-audits-for-mere-mortals",
           },
         ],
       },

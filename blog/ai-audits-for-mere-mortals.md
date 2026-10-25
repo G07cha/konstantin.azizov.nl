@@ -13,7 +13,9 @@ The information in this post is likely to become hopelessly outdated in less tha
 
 Many popular options target API access only, where you're billed per token, which can feel scary. So I stuck to tools that work with AI subscriptions and picked the three most promising.
 
-First stop, [Deepsec](https://github.com/vercel-labs/deepsec) from Vercel:
+### Deepsec CLI
+
+First stop, [Deepsec](https://github.com/vercel-labs/deepsec) CLI from Vercel:
 
 ![Deepsec CLI](./assets/ai-audits-for-mere-mortals-1.png)
 
@@ -22,6 +24,8 @@ First stop, [Deepsec](https://github.com/vercel-labs/deepsec) from Vercel:
 - Doesn't handle usage limits gracefully yet, so it will likely require multiple restarts depending on your subscription tier
 
 <hr />
+
+### Anthropic security scan plugin
 
 Next up, a [security scan plugin](https://code.claude.com/docs/en/claude-security) from Anthropic:
 
@@ -35,6 +39,8 @@ Next up, a [security scan plugin](https://code.claude.com/docs/en/claude-securit
 - Proprietary license
 
 <hr />
+
+### Cloudflare security audit skill
 
 Last but not least, the [security audit skill](https://github.com/cloudflare/security-audit-skill) from Cloudflare:
 
